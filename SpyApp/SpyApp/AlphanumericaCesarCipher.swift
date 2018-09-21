@@ -58,11 +58,15 @@ struct AlphanumericCesarCipher: Cipher {
             }
             var shiftedCharacter = ""
             if (unicode >= 65 && unicode <= 90) || (unicode >= 48 && unicode <= 57) {
-                var shiftedUnicode = unicode - shiftBy
-                shiftedUnicode = UInt32(abs(Int32(shiftedUnicode)))
-                if shiftedUnicode <	 48 && unicode >= 48 		{
+                var shiftedUnicode = unicode
+                if Int(unicode) - Int(shiftBy) > 0	{
+                    shiftedUnicode = unicode - shiftBy
+                } else {
+                    shiftedUnicode =  shiftBy - unicode
+                }
+                if shiftedUnicode <	 48 && unicode >= 48 {
                     let temp = 48 - shiftedUnicode
-                    if temp > 26 {
+                    if temp > 10 {
                         let encodeTemp = "9"
                         shiftedCharacter = self.encode(encodeTemp, secret: String(temp-27))!
                     }else {
