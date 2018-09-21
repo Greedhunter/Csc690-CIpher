@@ -17,13 +17,22 @@ struct AlphanumericCesarCipher: Cipher {
                 var shiftedUnicode = unicode + shiftBy
                 if shiftedUnicode > 90 {
                     let temp = shiftedUnicode - 90
-                    shiftedUnicode = 47 + temp
-                    shiftedCharacter = String(UnicodeScalar(UInt8(shiftedUnicode)))
+                    if temp > 10 {
+                        let encodeTemp = "A"
+                        shiftedCharacter = self.encode(encodeTemp, secret: String(temp-11))!
+                    }else{
+                        shiftedUnicode = 48 + temp
+                        shiftedCharacter = String(UnicodeScalar(UInt8(shiftedUnicode)))
+                    }
                 } else if shiftedUnicode > 57 && unicode <= 57 {
                     let temp = shiftedUnicode - 57
-                    shiftedUnicode = 64 + temp
-                    shiftedCharacter = String(UnicodeScalar(UInt8(shiftedUnicode)))
-                    
+                    if temp > 26 {
+                        let encodeTemp = "0"
+                        shiftedCharacter = self.encode(encodeTemp, secret: String(temp-27))!
+                    }else{
+                        shiftedUnicode = 65 + temp
+                        shiftedCharacter = String(UnicodeScalar(UInt8(shiftedUnicode)))
+                    }
                 }else {
                     shiftedCharacter = String(UnicodeScalar(UInt8(shiftedUnicode)))
                 }
@@ -50,15 +59,25 @@ struct AlphanumericCesarCipher: Cipher {
             var shiftedCharacter = ""
             if (unicode >= 65 && unicode <= 90) || (unicode >= 48 && unicode <= 57) {
                 var shiftedUnicode = unicode - shiftBy
-                if shiftedUnicode < 48 {
-                    let temp = 47 - shiftedUnicode
-                    shiftedUnicode = 90 - temp
-                    shiftedCharacter = String(UnicodeScalar(UInt8(shiftedUnicode)))
+                shiftedUnicode = UInt32(abs(Int32(shiftedUnicode)))
+                if shiftedUnicode <	 48 && unicode >= 48 		{
+                    let temp = 48 - shiftedUnicode
+                    if temp > 26 {
+                        let encodeTemp = "9"
+                        shiftedCharacter = self.encode(encodeTemp, secret: String(temp-27))!
+                    }else {
+                        shiftedUnicode = 90 - temp
+                        shiftedCharacter = String(UnicodeScalar(UInt8(shiftedUnicode)))
+                    }
                 } else if shiftedUnicode < 65 && unicode >= 65 {
-                    let temp = 64 - shiftedUnicode
-                    shiftedUnicode = 57 - temp
-                    shiftedCharacter = String(UnicodeScalar(UInt8(shiftedUnicode)))
-                    
+                    let temp = 65 - shiftedUnicode
+                    if temp > 10 {
+                        let encodeTemp = "Z"
+                        shiftedCharacter = self.encode(encodeTemp, secret: String(temp-11))!
+                    } else {
+                        shiftedUnicode = 58 - temp
+                        shiftedCharacter = String(UnicodeScalar(UInt8(shiftedUnicode)))
+                    }
                 }else {
                     shiftedCharacter = String(UnicodeScalar(UInt8(shiftedUnicode)))
                 }

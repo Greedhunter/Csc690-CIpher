@@ -11,7 +11,7 @@ class AlphanumericCipherTest: XCTestCase {
     }
     
     func test_oneCharacterStirngGetsMappedToSelfWith_0_secret() {
-        let plaintext = "a"
+        let plaintext = "A"
         
         let result = cipher.encode(plaintext, secret: "0")
         

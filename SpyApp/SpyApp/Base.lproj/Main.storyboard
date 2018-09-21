@@ -84,7 +84,7 @@
                                 <rect key="frame" x="112.5" y="204" width="150" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.96726379341480107" blue="0.80089986000570301" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="fru-NG-idA"/>
+                                    <constraint firstAttribute="width" constant="150" id="eWd-FP-i53"/>
                                 </constraints>
                                 <state key="normal" title="Decrypt"/>
                                 <connections>
@@ -94,11 +94,11 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="48c-5E-e8N" firstAttribute="top" secondItem="31g-ZM-n1a" secondAttribute="bottom" constant="43" id="EgW-rX-mbA"/>
                             <constraint firstItem="48c-5E-e8N" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Fye-Ix-2U7"/>
                             <constraint firstItem="31g-ZM-n1a" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IIR-a5-jo6"/>
                             <constraint firstItem="kq1-Ko-TkT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JS0-Ac-2WG"/>
                             <constraint firstItem="cW2-gE-Std" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="JwL-SB-ITd"/>
+                            <constraint firstItem="48c-5E-e8N" firstAttribute="top" secondItem="31g-ZM-n1a" secondAttribute="bottom" constant="43" id="KdA-iA-d94"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="48c-5E-e8N" secondAttribute="trailing" constant="16" id="Qwe-M7-v3S"/>
                             <constraint firstItem="kX9-ON-sy8" firstAttribute="top" secondItem="4B7-dH-Qje" secondAttribute="bottom" constant="8" id="TRM-78-IYu"/>
                             <constraint firstItem="4B7-dH-Qje" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="URM-Hs-FUu"/>
@@ -128,7 +128,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="98.50074962518741"/>
+            <point key="canvasLocation" x="136.5" y="98.5"/>
         </scene>
     </scenes>
 </document>
